@@ -1,0 +1,56 @@
+server:
+  http_port: 8090  # 监听的HTTP端口
+  grpc_port: 50051  # 监听的gRPC端口
+  environment: dev  # 环境名称，可选值：dev, test, prod
+  
+log:
+  level: info # 日志级别，可选值：debug, info, warn, error, fatal, panic
+  filename: ./logs/app.log
+  maxsize: 100    # 每个日志文件的最大尺寸(MB)
+  maxbackups: 3   # 保留的旧日志文件最大数量 
+  maxage: 7       # 保留的旧日志文件最大天数
+  compress: true  # 是否压缩旧日志文件
+  console: true   # 是否同时输出到控制台
+
+redis: # Redis 配置
+  addr: "127.0.0.1:6379"    # Redis 服务器地址
+  password: ""  # Redis 密码，如果没有设置则为空
+  db: 0 # Redis 数据库索引 
+  pool_size: 10   # Redis 连接池大小
+
+database:
+  dsn: "host=localhost port=5432 user=postgres password=xxx dbname=testdb sslmode=disable" # 数据库连接字符串
+  log_level: "info" # 日志级别，可选值：debug, info, warn, error, fatal, panic
+  slow_threshold: 1s # 慢查询阈值
+  dry_run: false # 是否启用 dry run 模式
+  max_open_conns: 100 # 最大打开连接数
+  max_idle_conns: 10 # 最大空闲连接数
+  conn_max_lifetime: 30m # 连接最大生命周期
+
+oauth2:  # OAuth2 配置
+  issuer: "http://localhost:8090"  # 服务发行者地址
+  login_url: "/login"  # 用户登录页地址
+
+  manager:  # 令牌管理器配置
+    access_token_exp: 3600  # 访问令牌有效期（秒，默认1小时）
+    refresh_token_exp: 86400  # 刷新令牌有效期（秒，默认1天）
+    token_type: "Bearer"  # 令牌类型（可省略）
+    jwt_private_key: "./private.pem"
+    jwt_public_key: "./public.pem"
+    signing_method: "RS256"
+    kid: "kid"  # JWT签名密钥ID（建议从环境变量注入）
+
+  clients:  # 客户端列表
+    - id: "client_id_1"  # 客户端唯一标识
+      secret: "client_secret_1"  # 客户端密钥（建议加密）
+      redirect_uris:  # 合法回调地址
+        - "http://localhost:9999/oauth2/callback"
+      scopes: ["user", "know"]  # 允许的权限范围
+      grant_types: ["authorization_code", "refresh_token","client_credentials", "__implicit"]  # 支持的授权方式
+
+    - id: "client_id_2"
+      secret: "client_secret_2"
+      redirect_uris:
+        - "http://localhost:8090/oauth2/callback"
+      scopes: ["all"]  # 全部权限
+      grant_types: ["authorization_code", "client_credentials"]
