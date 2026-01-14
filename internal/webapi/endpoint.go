@@ -15,7 +15,7 @@ func login(r *gin.Engine) {
 	r.GET("/login", func(ctx *gin.Context) {
 
 		// 加载登录页面
-		ctx.File("../web/auth/dist/index.html")
+		ctx.File("../../web/dist/index.html")
 	})
 }
 
@@ -42,7 +42,7 @@ func authApiV1EndPoint(r *gin.Engine, srv *server.Server, cfg *configs.OAuth2, s
 // 用户端口:V1
 func userApiV1EndPoint(r *gin.Engine, userApp *user.UserApp, session *session.Session, logger *zap.Logger) {
 
-	user := r.Group("user")
+	user := r.Group("/api/v1/user/")
 	{
 		user.POST("login", handler.Login(session, userApp, logger))
 		user.POST("logout", handler.Logout(session, userApp, logger))

@@ -23,7 +23,7 @@ func main() {
 		app.UseSwagger()
 	}
 
-	app.UseStaticFiles("/assets", "../../web/auth/dist/assets")
+	app.UseStaticFiles("/assets", "../../web/dist/assets")
 
 	// 配置路由
 	app.MapRoute(webapi.EndPointList...)

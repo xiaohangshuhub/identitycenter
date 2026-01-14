@@ -17,6 +17,7 @@ import (
 
 // CustomJWTAccessClaims 自定义JWT AccessClaims
 type CustomJWTAccessClaims struct {
+	Roles []string
 	jwt.RegisteredClaims
 }
 
@@ -39,6 +40,7 @@ type CustomJWTAccessGenerate struct {
 // Token 生成访问令牌和刷新令牌
 func (a *CustomJWTAccessGenerate) Token(ctx context.Context, data *oauth2.GenerateBasic, isGenRefresh bool) (string, string, error) {
 	claims := &CustomJWTAccessClaims{
+		Roles: []string{"admin"},
 		RegisteredClaims: jwt.RegisteredClaims{
 			Audience:  jwt.ClaimStrings{data.Client.GetID()},
 			Subject:   data.UserID,
