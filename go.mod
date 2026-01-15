@@ -9,7 +9,7 @@ require (
 	github.com/imroc/req/v3 v3.54.0
 	github.com/spf13/viper v1.21.0
 	github.com/swaggo/swag v1.16.6
-	github.com/xiaohangshuhub/go-workit v0.0.0-20251127064825-5543cc477c65
+	github.com/xiaohangshuhub/go-workit v0.0.0-20260115013328-250ef77adf6f
 	go.uber.org/fx v1.24.0
 	go.uber.org/zap v1.27.0
 	google.golang.org/grpc v1.73.0 // indirect

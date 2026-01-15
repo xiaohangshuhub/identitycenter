@@ -367,8 +367,8 @@ github.com/xeipuuv/gojsonschema v1.2.0 h1:LhYJRs+L4fBtjZUfuSZIKGeVu0QRy8e5Xi7D17
 github.com/xeipuuv/gojsonschema v1.2.0/go.mod h1:anYRn/JVcOK2ZgGU+IjEV4nwlhoK5sQluxsYJ78Id3Y=
 github.com/xiaohangshuhub/gin v0.0.0-20251127022746-130901f68014 h1:zpNhQ7MIDppdu4QIgi24bpXuIGBbViamwvpljBAoXkI=
 github.com/xiaohangshuhub/gin v0.0.0-20251127022746-130901f68014/go.mod h1:+ifFH7AfkeCxX5/OY3l2sYefF07IMfgDoNNL8bhrquk=
-github.com/xiaohangshuhub/go-workit v0.0.0-20251127064825-5543cc477c65 h1:+KEu4vEb9YitNzP5eh0XrsihcDMT62JU/skZ6Mv8Dkw=
-github.com/xiaohangshuhub/go-workit v0.0.0-20251127064825-5543cc477c65/go.mod h1:tssP0bT/Ob99YQ6MreDlaeAZFm6k1bwXf3GxOFjhFDg=
+github.com/xiaohangshuhub/go-workit v0.0.0-20260115013328-250ef77adf6f h1:6XUXSBxPcZYw9SOmM1bFEpfe+Q8x4Xj3NEqQ57qGynI=
+github.com/xiaohangshuhub/go-workit v0.0.0-20260115013328-250ef77adf6f/go.mod h1:tssP0bT/Ob99YQ6MreDlaeAZFm6k1bwXf3GxOFjhFDg=
 github.com/xyproto/randomstring v1.0.5 h1:YtlWPoRdgMu3NZtP45drfy1GKoojuR7hmRcnhZqKjWU=
 github.com/xyproto/randomstring v1.0.5/go.mod h1:rgmS5DeNXLivK7YprL0pY+lTuhNQW3iGxZ18UQApw/E=
 github.com/yalp/jsonpath v0.0.0-20180802001716-5cc68e5049a0 h1:6fRhSjgLCkTD3JnJxvaJ4Sj+TYblw757bqYgZaOq5ZY=
